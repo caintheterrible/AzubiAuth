@@ -67,4 +67,4 @@ def base_config()->BaseConfiguration:
     """Cached instance of BaseConfiguration."""
     return BaseConfiguration()
 
-configurations:BaseConfiguration=base_config()
+base_configurations:BaseConfiguration=base_config()
