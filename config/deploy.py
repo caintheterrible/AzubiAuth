@@ -1,5 +1,5 @@
-from config.base import configurations
-# from config.database import *
+from config.base import base_configurations
+from config.database import db_configurations
 # import config.env
 
 ALLOWED_HOSTS:list=configurations.allowed_hosts
