@@ -10,7 +10,7 @@ class BaseConfiguration:
     """Core Django configuration preferences."""
     def __init__(self):
         self._secret_key=os.environ.get('DJANGO_SECRET_KEY')
-        self.base_dir=Path(__file__).resolve().parent.parent.parent
+        self.base_dir=Path(__file__).resolve().parent.parent
         self._root_urlconf='config.urls'
         self._allowed_hosts_conf:list=['127.0.0.1', 'localhost']
 
