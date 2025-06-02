@@ -10,4 +10,8 @@ DATABASES={
     'analytics':get_sqlite_database_config('analytics.sqlite3', max_connections=15)
 }
 
-print(DATABASES)
+# other settings
+LANGUAGE:str='en-us'
+USE_TZ:bool=True
+USE_L10N:bool=True
+USE_I10N:bool=True
