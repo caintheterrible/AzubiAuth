@@ -1,9 +1,17 @@
+"""Configuration module manager for application deployment. Works as DJANGO_SETTINGS_MODULE and loads configurations to `manage.py`."""
+
 from pathlib import Path
 from config.base import base_configurations
+from config.development import development_configurations
 from config.sqlconfig import get_sqlite_database_config
 
+# Environment-specific configurations- to configure dynamic module loading
+DEBUG:bool=development_configurations.debug     # to be set as environment-specific configuration
+ALLOWED_HOSTS:list=development_configurations.allowed_hosts # this is to be set as an environment-specific configuration
+
+# Base Django application configurations
+SECRET_KEY:str=base_configurations.secret_key
 BASE_DIR:Path=base_configurations.base_dir
-ALLOWED_HOSTS:list=base_configurations.allowed_hosts
 ROOT_URLCONF:str=base_configurations.root_url_configurations
 DATABASES={
     'default':get_sqlite_database_config('db.sqlite3'),
